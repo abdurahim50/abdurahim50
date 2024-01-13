@@ -14,15 +14,34 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-# Abdurahim Yongho
-Full Stack Developer | Open Source Enthusiast
-
-🌐 Portfolio: [john-doe.com](https://john-doe.com)
-🐦 Twitter: [@john_doe](https://twitter.com/john_doe)
-📚 LinkedIn: [John Doe](https://linkedin.com/in/johndoe)
-
-![GitHub followers](https://img.shields.io/github/followers/john-doe?style=social)
-![Twitter Follow](https://img.shields.io/twitter/follow/john_doe?style=social)
-
-🚀 Passionate about coding, contributing to open source, and building cool projects!
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your GitHub Profile</title>
+    <!-- Add any additional meta tags, styles, or links here -->
+</head>
+<body>
+    <header>
+        <img src="your-profile-picture.jpg" alt="Your Profile Picture" width="100" height="100">
+        <h1>Your Name</h1>
+        <p>Full Stack Developer | Open Source Enthusiast</p>
+        <!-- Add social links -->
+        <ul>
+            <li><a href="https://twitter.com/your_twitter" target="_blank">Twitter</a></li>
+            <li><a href="https://linkedin.com/in/your_linkedin" target="_blank">LinkedIn</a></li>
+            <!-- Add more social links as needed -->
+        </ul>
+        <!-- Add badges or shields -->
+        <img src="https://img.shields.io/github/followers/your-username?style=social" alt="GitHub Followers">
+        <img src="https://img.shields.io/twitter/follow/your_twitter?style=social" alt="Twitter Follow">
+    </header>
+    <!-- Add a brief summary or bio -->
+    <section>
+        <h2>About Me</h2>
+        <p>Passionate about coding, contributing to open source, and building cool projects!</p>
+    </section>
+    <!-- Add more sections as needed -->
+</body>
+</html>
