@@ -24,7 +24,7 @@ Here are some ideas to get you started:
 </head>
 <body>
     <header>
-        <img src="your-profile-picture.jpg" alt="Your Profile Picture" width="100" height="100">
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--J-TllyRc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/dlieqpdfd/image/upload/v1704632356/GitHub%2520Profile/github-profile-achievements_tlqp3p.png" alt="Your Profile Picture" width="100" height="100">
         <h1>Your Name</h1>
         <p>Full Stack Developer | Open Source Enthusiast</p>
         <!-- Add social links -->
