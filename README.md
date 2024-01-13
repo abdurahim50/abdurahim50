@@ -14,6 +14,8 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+<!-- README.md -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,25 +25,49 @@ Here are some ideas to get you started:
     <!-- Add any additional meta tags, styles, or links here -->
 </head>
 <body>
-    <header>
-        <img src="profile picture" alt="Your Profile Picture" width="100" height="100">
-        <h1>Abdurahim Yongho</h1>
-        <p>DevOps | SRE | Agilyst | Open Source Enthusiast</p>
-        <!-- Add social links -->
-        <ul>
-            <li><a href="https://twitter.com/AYongho" target="_blank">Twitter</a></li>
-            <li><a href="https://www.linkedin.com/in/abdurahim-yongho-1a7b33159/" target="_blank">LinkedIn</a></li>
-            <!-- Add more social links as needed -->
-        </ul>
-        <!-- Add badges or shields -->
-        <img src="https://img.shields.io/github/followers/abdurahim50?style=social" alt="GitHub Followers">
-        <img src="https://img.shields.io/twitter/follow/https://your twitter?style=social" alt="Twitter Follow">
-    </header>
-    <!-- Add a brief summary or bio -->
-    <section>
-        <h2>About Me</h2>
-        <p>Passionate about coding, contributing to open source, and building cool projects!</p>
-    </section>
-    <!-- Add more sections as needed -->
+    <h1>👋 Hi there, I'm [Your Name]!</h1>
+
+    <h2>🚀 About Me</h2>
+    <ul>
+        <li>🔭 I’m currently working at P33R Finance, incubated by Tenity, and selected for AWS Startups Build Accelerator 2023.</li>
+        <li>🌱 I’m passionate about serverless in AWS and Web3.</li>
+        <li>📝 I’m aiming to write one article per week starting from November 2023.</li>
+        <li>🏆 I'm striving to increase my GitHub stats rating by contributing to open source.</li>
+        <li>⚡ Fun fact: I read books, play the piano, and sleep with my dog!</li>
+        <li>💡 A Quote: "A random quote"</li>
+    </ul>
+
+    <h2>💻 My Tech Stack</h2>
+    <p>Next.js, Svelte, Node.js, JavaScript, TypeScript, AWS, GCP, Solidity</p>
+
+    <h2>📖 Read My Blogs</h2>
+    <ul>
+        <li><a href="https://dev.to" target="_blank">dev.to</a></li>
+        <li><a href="https://hashnode.com" target="_blank">Hashnode</a></li>
+        <li><a href="https://medium.com" target="_blank">Medium</a></li>
+    </ul>
+
+    <h2>🏆 My Stats</h2>
+    <ul>
+        <li>GitHub Stats</li>
+        <li>Most Used Languages</li>
+    </ul>
+
+    <h2>🤝 My Contributions and POAPs</h2>
+    <ul>
+        <li>Taiko GitHub Contributor 2023</li>
+        <li>Ethereum.org GitHub Contributor 2023</li>
+        <li>ZK-Roller-Coaster Taiko Research Contributor</li>
+        <li>Double Your DeFi Cohort 2: May 2023</li>
+    </ul>
+
+    <h2>🎮 When I'm AFK</h2>
+    <ul>
+        <li>PlayStation 5</li>
+        <li>Switch</li>
+        <li>Steam</li>
+        <li>Netflix</li>
+    </ul>
 </body>
 </html>
+
