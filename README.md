@@ -26,7 +26,7 @@ Here are some ideas to get you started:
     <header>
         <img src="profile picture" alt="Your Profile Picture" width="100" height="100">
         <h1>Abdurahim Yongho</h1>
-        <p>Full Stack Developer | Open Source Enthusiast</p>
+        <p>DevOps | SRE | Agilyst | Open Source Enthusiast</p>
         <!-- Add social links -->
         <ul>
             <li><a href="https://twitter.com/AYongho" target="_blank">Twitter</a></li>
@@ -35,7 +35,7 @@ Here are some ideas to get you started:
         </ul>
         <!-- Add badges or shields -->
         <img src="https://img.shields.io/github/followers/abdurahim50?style=social" alt="GitHub Followers">
-        <img src="https://img.shields.io/twitter/follow/https://twitter.com/AYongho?style=social" alt="Twitter Follow">
+        <img src="https://img.shields.io/twitter/follow/https://your twitter?style=social" alt="Twitter Follow">
     </header>
     <!-- Add a brief summary or bio -->
     <section>
