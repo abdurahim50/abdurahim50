@@ -24,13 +24,13 @@ Here are some ideas to get you started:
 </head>
 <body>
     <header>
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--J-TllyRc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/dlieqpdfd/image/upload/v1704632356/GitHub%2520Profile/github-profile-achievements_tlqp3p.png" alt="Your Profile Picture" width="100" height="100">
-        <h1>Your Name</h1>
+        <img src="profile picture" alt="Your Profile Picture" width="100" height="100">
+        <h1>Abdurahim Yongho</h1>
         <p>Full Stack Developer | Open Source Enthusiast</p>
         <!-- Add social links -->
         <ul>
-            <li><a href="https://twitter.com/your_twitter" target="_blank">Twitter</a></li>
-            <li><a href="https://linkedin.com/in/your_linkedin" target="_blank">LinkedIn</a></li>
+            <li><a href="https://twitter.com/AYongho" target="_blank">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/abdurahim-yongho-1a7b33159/" target="_blank">LinkedIn</a></li>
             <!-- Add more social links as needed -->
         </ul>
         <!-- Add badges or shields -->
