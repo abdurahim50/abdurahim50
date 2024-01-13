@@ -34,7 +34,7 @@ Here are some ideas to get you started:
             <!-- Add more social links as needed -->
         </ul>
         <!-- Add badges or shields -->
-        <img src="https://img.shields.io/github/followers/your-username?style=social" alt="GitHub Followers">
+        <img src="https://img.shields.io/github/followers/abdurahim50?style=social" alt="GitHub Followers">
         <img src="https://img.shields.io/twitter/follow/your_twitter?style=social" alt="Twitter Follow">
     </header>
     <!-- Add a brief summary or bio -->
