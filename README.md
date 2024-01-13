@@ -14,3 +14,8 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+🔭 I’m currently working at P33R Finance where we were incubated by Tenity and selected for AWS Startups Build Accelerator 2023.
+🌱 I’m passionate about serverless in AWS and Web3.
+📝 I’m aiming to write one article per week starting from November 2023.
+🏆 I'm striving to increase my GitHub stats rating by contributing to open source.
+⚡ Fun fact: I read books, play the piano, and sleep with my dog!
