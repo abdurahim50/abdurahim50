@@ -9,7 +9,7 @@ I'm a passionate DevOps Engineer based in Minnesota, with a background in Softwa
 - 👯 I’m looking to collaborate on projects related to DevOps tooling and automation.
 - 🤔 I’m looking for help with optimizing Docker containers for production environments.
 - 💬 Ask me about Docker, Kubernetes, CI/CD pipelines, or anything related to DevOps practices.
-- 📫 How to reach me: [Your Contact Information].
+- 📫 How to reach me: linkedIn
 - 😄 Pronouns: He/Him.
 - ⚡ Fun fact: I enjoy experimenting with new cooking recipes in my spare time!
 
@@ -20,7 +20,7 @@ I'm a passionate DevOps Engineer based in Minnesota, with a background in Softwa
 - Tools & Technologies: Docker, Kubernetes, Jenkins, Terraform, Ansible.
 
 ## Projects
-
+<!--
 ### [Project Name]
 
 Brief description of the project.
@@ -32,14 +32,14 @@ Brief description of the project.
 Brief description of the project.
 
 - [Link to Project Repository or Demo]
-
+-->
 ## Blogs & Writing
 
 Check out my latest articles on [Medium](https://yonghoabdurahim.medium.com/)!
 
 ## Connect with Me
 
-- Twitter: [@jekyllrb](https://twitter.com/jekyllrb)
+- Twitter: [@AYongho](https://x.com/AYongho)
 - LinkedIn: [Abdurahim Yongho](https://www.linkedin.com/in/yourprofile/)
 - GitHub: [abdurahim50](https://github.com/abdurahim50)
 - Medium: [Abdurahim Yongho](https://yonghoabdurahim.medium.com/)
