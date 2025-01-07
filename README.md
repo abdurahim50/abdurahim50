@@ -9,7 +9,7 @@ I'm a passionate DevOps Engineer based in Minnesota, with a background in Softwa
 - 👯 I’m looking to collaborate on projects related to DevOps tooling and automation.
 - 🤔 I’m looking for help with optimizing Docker containers for production environments.
 - 💬 Ask me about Docker, Kubernetes, CI/CD pipelines, or anything related to DevOps practices.
-- 📫 How to reach me: [Abdurahim Yongho](https://www.linkedin.com/in/yourprofile/)
+- 📫 How to reach me: [LinkedIn](https://www.linkedin.com/in/abdurahim-yongho/)
 - 😄 Pronouns: He/Him.
 - ⚡ Fun fact: I enjoy experimenting with new cooking recipes in my spare time!
 
