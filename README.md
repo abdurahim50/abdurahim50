@@ -40,7 +40,7 @@ Check out my latest articles on [Medium](https://yonghoabdurahim.medium.com/)!
 ## Connect with Me
 
 - Twitter: [@AYongho](https://x.com/AYongho)
-- LinkedIn: [Abdurahim Yongho](https://www.linkedin.com/in/yourprofile/)
+- LinkedIn: [Abdurahim Yongho](https://www.linkedin.com/in/abdurahim-yongho/)
 - GitHub: [abdurahim50](https://github.com/abdurahim50)
 - Medium: [Abdurahim Yongho](https://yonghoabdurahim.medium.com/)
 
