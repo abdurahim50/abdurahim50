@@ -1,38 +1,40 @@
+
 # Hi there, I'm Yongho Abdurahim! 👋
 
 ## About Me
 
-I'm a passionate DevOps Engineer based in Minnesota, with a background in Software Application Development. I enjoy automating processes and building scalable infrastructure. My interests span from cloud computing and container orchestration to continuous integration and deployment.
+I'm an aspiring DevSecOps Engineer based in Minnesota, currently studying Cybersecurity and Computer Science at Metropolitan State University. With a background in Software Application Development, I’m passionate about securing automated infrastructure, container orchestration, and building reliable CI/CD pipelines with security in mind.
 
-- 🔭 I’m currently working on setting up Kubernetes clusters and automating CI/CD pipelines.
+- 🔭 Currently learning and building Kubernetes clusters with secure CI/CD automation
 - 🌱 I’m currently learning advanced Docker orchestration and Kubernetes best practices.
-- 👯 I’m looking to collaborate on projects related to DevOps tooling and automation.
-- 🤔 I’m looking for help with optimizing Docker containers for production environments.
-- 💬 Ask me about Docker, Kubernetes, CI/CD pipelines, or anything related to DevOps practices.
+- 👯 Open to collaborating on DevSecOps, infrastructure-as-code, and security automation projects.
+- 🤝 Looking to strengthen container and cloud security strategies for production workloads.
+- 💬Ask me about Docker, Kubernetes, Terraform, Jenkins, or DevSecOps practices.
 - 📫 How to reach me: [LinkedIn](https://www.linkedin.com/in/abdurahim-yongho/)
 - 😄 Pronouns: He/Him.
 - ⚡ Fun fact: I enjoy experimenting with new cooking recipes in my spare time!
 
 ## Skills
 
-- Programming Languages: Python, Go, Bash, YAML.
-- Web Development: HTML, CSS, JavaScript, React.
-- Tools & Technologies: Docker, Kubernetes, Jenkins, Terraform, Ansible.
+**Languages:** Python • C • Bash • YAML
 
-## Projects
-<!--
-### [Project Name]
+**Cloud & DevSecOps Tools:** Docker • Kubernetes • Jenkins • Terraform • Ansible • AWS • Git
 
-Brief description of the project.
+**Security Tools:** Nmap • Wireshark • Nessus • Splunk (basic)
 
-- [Link to Project Repository or Demo]
+**Web Development:** HTML • CSS • JavaScript • React
 
-### [Another Project Name]
+## 📂 Featured Projects
+Full list on [Medium](https://yonghoabdurahim.medium.com/)! and [GitHub Projects](https://github.com/abdurahim50)
 
-Brief description of the project.
+- Kubernetes Cluster Autoscaler on EKSTerraform + Helm deployment with real-world autoscaling.
 
-- [Link to Project Repository or Demo]
--->
+- CI/CD Pipeline with Jenkins & AWS CodePipelineAutomated deployments using Git, Docker, and AWS DevSecOps tools.
+
+- SaaS Multi-Tenant AWS InfrastructureProvisioned fully automated multi-account infra using Terraform modules.
+
+- Django Web App on DigitalOcean KubernetesEnd-to-end app deployment with GitHub Actions and Helm.
+
 ## Blogs & Writing
 
 Check out my latest articles on [Medium](https://yonghoabdurahim.medium.com/)!
@@ -61,19 +63,6 @@ I once ran a half marathon without any prior training, just to prove a bet with 
 
 
 
-<!--
-**abdurahim50/abdurahim50** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
 
 
