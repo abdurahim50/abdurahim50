@@ -1,95 +1,110 @@
 # Hi, I'm Abdurahim Yongho 👋
 
-**DevSecOps · Cloud & Applied AI · Minneapolis–St. Paul, MN**
+## DevSecOps · Cloud Security · Minneapolis-St. Paul, MN
 
-Cybersecurity and Computer Science student at Metropolitan State University, with a background in software application development. I build infrastructure that's automated first and secured at the same time: Kubernetes clusters, Terraform-provisioned cloud environments, and CI/CD pipelines where a failing security check stops the deploy instead of filing a report nobody reads.
+![Security+](https://img.shields.io/badge/CompTIA-Security%2B-2ea44f?style=flat-square)
+![Network+](https://img.shields.io/badge/CompTIA-Network%2B-2ea44f?style=flat-square)
+![AWS Cloud Practitioner](https://img.shields.io/badge/AWS-Cloud%20Practitioner-FF9900?style=flat-square&logo=amazonwebservices&logoColor=white)
+![PSM I](https://img.shields.io/badge/Scrum.org-PSM%20I-0b5d8c?style=flat-square)
 
-Lately that includes AI systems, which turn out to raise the same question as a deploy pipeline: what happens when it fails, and does it fail loudly?
+I build cloud systems where security is part of the delivery path, not a report filed afterwards. A failing scan stops the merge, an unsigned image never reaches production, and every claim in my READMEs links to the evidence behind it.
 
-🔗 **[Portfolio & writeups → abdurahim50.github.io](https://abdurahim50.github.io)**
+Cybersecurity student at Metropolitan State University, with an A.S. in Software Application Development and a background in HIPAA-regulated compliance work.
 
----
+### 🔎 Currently looking for
 
-## 🔭 What I'm working on
-
-- Building and hardening Kubernetes clusters, including one assembled by hand with `kubeadm`, because the managed services only make sense once you've done it the hard way
-- Supply-chain security in CI/CD: SHA-pinned actions, keyless image signing, SBOM attestation, and OIDC federation instead of long-lived cloud keys
-- Applied AI with guardrails: LLMs for language, deterministic code for decisions
-- Working toward AWS Solutions Architect – Associate
+DevSecOps and cloud security **internships or entry-level roles** where I can help teams ship secure-by-default pipelines and infrastructure.
 
 ---
 
 ## 📂 Featured projects
 
-| Project | What it demonstrates | Links |
-|---|---|---|
-| **VibeMatch AI Concierge** | Agentic `plan → act → check → explain` recommender. Claude parses free text into a schema-constrained profile, a guardrail validates it, and a deterministic engine ranks. Ships with an evaluation harness and a full no-API-key fallback. | [Code](https://github.com/abdurahim50/applied-ai-music-recommender) · [Writeup](https://abdurahim50.github.io/writeups/the-guardrail-that-invented-a-genre.html) |
-| **Kubernetes Cluster Autoscaler on EKS** | Terraform-provisioned EKS with the autoscaler deployed via Helm, load-tested until nodes genuinely scale. Covers the IAM/OIDC service-account wiring that trips people up. | [Code](https://github.com/abdurahim50/my-eks-module) · [Article](https://yonghoabdurahim.medium.com/kubernetes-cluster-autoscaler-deployed-on-eks-cluster-4b3a1c2791e5) |
-| **Kubernetes the Hard Way with kubeadm** | Multi-node cluster from scratch: certificate distribution, CNI setup, kubelet config, node hardening. No managed control plane. | [Code](https://github.com/abdurahim50/kubernetes_multi-nodes_cluster_using_kubeadm) |
-| **HumanGov: Multi-Tenant SaaS on AWS** | Reusable multi-tenant infrastructure via Terraform modules. One module set provisions an isolated stack per tenant, so onboarding a new state is a variable change. | [Article](https://yonghoabdurahim.medium.com/humangov-deployment-of-a-reusable-saas-multi-tenant-aws-infrastructure-using-terraform-modules-722de6698760) |
-| **CI/CD to EKS with Jenkins & CodePipeline** | Automated build-and-deploy onto EKS with security checks inside the pipeline rather than alongside it. | [Code](https://github.com/abdurahim50/jenkins_training_docker) · [Article](https://yonghoabdurahim.medium.com/deploy-a-sample-application-onto-eks-cluster-utilizing-aws-ci-cd-code-pipeline-codecommit-aws-81b1b2ea5cde) |
+| Project | What it is | Technologies | Status |
+|---|---|---|---|
+| **[MediBook](https://github.com/abdurahim50/medibook)** | Secure patient appointment-booking API on AWS with a signed, policy-gated delivery pipeline | Python · FastAPI · Terraform · ECS Fargate · RDS · GitHub Actions · Cosign · OPA | [![CI](https://github.com/abdurahim50/medibook/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/abdurahim50/medibook/actions/workflows/ci.yml) |
 
-More on the [portfolio site](https://abdurahim50.github.io/projects.html).
+*More projects are being rebuilt to the same evidence-first standard and will be added as they're ready.*
 
----
+### MediBook in detail
 
-## 🛠️ Skills
+A patient appointment-booking API on AWS, built end to end as a secure delivery exercise on synthetic data. Built across 28 merged pull requests.
 
-**Cloud & IaC:** AWS · Azure · Terraform · Ansible · IAM design · VPC architecture
+- **Pipeline:** 8 required checks on every pull request: tests, SAST, dependency, secret and image scans, policy tests, authenticated DAST and a Terraform plan
+- **Supply chain:** keyless Cosign signatures and SBOM attestation, pushed to ECR through GitHub OIDC with no stored AWS keys
+- **Deploy gate:** Terraform verifies the image signature during the plan, and Conftest policies block non-compliant infrastructure
+- **Data protection:** private, KMS-encrypted RDS PostgreSQL with verified TLS, IAM database auth and a least-privilege app role
+- **Recovery:** point-in-time restore drilled and measured at an RTO of 23 min 50 s with no data lost
+- **Governance:** controls mapped to NIST SP 800-53 Rev. 5, with a STRIDE threat model and known gaps tracked in the open
 
-**Containers & CI/CD:** Docker · Kubernetes · Helm · Argo CD · Jenkins · GitHub Actions · AWS CodePipeline
+```mermaid
+flowchart LR
+    PR["Pull request"] --> CI{"8 CI checks<br/>tests · SAST · SCA<br/>secrets · Trivy · DAST<br/>policy · TF plan"}
+    CI -- fail --> X["Merge blocked"]
+    CI -- pass --> M["main"]
+    M --> R["Release<br/>build · Trivy · SBOM<br/>Cosign sign"]
+    R -- "OIDC, no keys" --> ECR[("Amazon ECR")]
+    ECR --> TF{"Terraform plan<br/>verify signature<br/>Conftest policy"}
+    TF -- "unsigned or non-compliant" --> X2["Deploy refused"]
+    TF -- pass --> AWS["WAF · ALB<br/>ECS Fargate<br/>RDS PostgreSQL"]
+```
 
-**Security:** Linux hardening · Nmap · Wireshark · Nessus · Splunk · container scanning · supply-chain security (Cosign, SBOM)
-
-**Applied AI:** LLM integration · structured outputs · agentic workflows · output guardrails · evaluation harnesses
-
-**Languages:** Python · Bash · C · YAML · HCL · JavaScript · React
-
----
-
-## 🎓 Certifications
-
-![Security+](https://img.shields.io/badge/CompTIA-Security%2B-2ea44f?style=flat-square)
-![Network+](https://img.shields.io/badge/CompTIA-Network%2B-2ea44f?style=flat-square)
-![AWS SAA](https://img.shields.io/badge/AWS-Solutions%20Architect%20Associate-lightgrey?style=flat-square)
-
-CompTIA Security+ · CompTIA Network+ · AWS Solutions Architect – Associate *(in progress)*
+📄 [Architecture](https://github.com/abdurahim50/medibook/blob/main/docs/architecture.md) · [Threat model](https://github.com/abdurahim50/medibook/blob/main/docs/threat-model.md) · [NIST controls](https://github.com/abdurahim50/medibook/blob/main/docs/controls.md) · [Evidence](https://github.com/abdurahim50/medibook/blob/main/docs/evidence.md) · [Runbook](https://github.com/abdurahim50/medibook/blob/main/docs/runbook.md)
 
 ---
 
-## ✍️ Writing
+## 🎯 Skills mapped to DevSecOps job requirements
 
-I write up what I build, including the parts that broke. Recent:
+| Typical job requirement | Where to see it in MediBook |
+|---|---|
+| CI/CD with integrated security testing (SAST, SCA, DAST) | [CI workflow](https://github.com/abdurahim50/medibook/blob/main/.github/workflows/ci.yml): Bandit, Semgrep, pip-audit, gitleaks, Trivy, OWASP ZAP |
+| Infrastructure as Code on AWS | [Terraform stacks](https://github.com/abdurahim50/medibook/tree/main/infra): VPC, ALB, WAF, ECS Fargate, RDS, CloudWatch |
+| Policy as code and compliance | [Conftest policies](https://github.com/abdurahim50/medibook/tree/main/policy) mapped to NIST SP 800-53 |
+| Container security | Multi-stage, non-root, read-only image pinned by digest; Trivy gate |
+| Software supply-chain security | [Release workflow](https://github.com/abdurahim50/medibook/blob/main/.github/workflows/release.yml): Syft SBOM, Cosign signing, OIDC to ECR |
+| IAM and least privilege | Read-only CI plan role, RDS IAM auth, row-access-only database role |
+| Threat modeling and secure design | [STRIDE threat model](https://github.com/abdurahim50/medibook/blob/main/docs/threat-model.md) |
+| Monitoring, incident response, recovery | [Runbook](https://github.com/abdurahim50/medibook/blob/main/docs/runbook.md) and [recovery drills](https://github.com/abdurahim50/medibook/blob/main/docs/evidence/deployment/recovery-drills.md) |
+| Secure application development | FastAPI with argon2id hashing, session revocation, rate limiting, audit logging, security headers |
 
-- [The guardrail that invented a genre](https://abdurahim50.github.io/writeups/the-guardrail-that-invented-a-genre.html): an AI-written fallback that confidently ranked the wrong result, and why that's worse than a crash
-- [Kubernetes Cluster Autoscaler on EKS](https://yonghoabdurahim.medium.com/kubernetes-cluster-autoscaler-deployed-on-eks-cluster-4b3a1c2791e5)
-- [Jenkins with SSL behind an Nginx reverse proxy](https://yonghoabdurahim.medium.com/install-and-configure-jenkins-with-ssl-in-digitalocean-set-up-tools-and-use-nginx-as-reverse-proxy-8ae7077b6f52)
+---
 
-All posts: [Medium](https://yonghoabdurahim.medium.com/) · [dev.to](https://dev.to/abdurahim50)
+## 🛠️ Tech stack
+
+![AWS](https://img.shields.io/badge/-AWS-FF9900?style=flat-square&logo=amazonwebservices&logoColor=white)
+![Terraform](https://img.shields.io/badge/-Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
+![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/-GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Open Policy Agent](https://img.shields.io/badge/-OPA%20%2F%20Conftest-7D9199?style=flat-square&logo=openpolicyagent&logoColor=white)
+![Sigstore](https://img.shields.io/badge/-Cosign-2E2E2E?style=flat-square&logo=sigstore&logoColor=white)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Linux](https://img.shields.io/badge/-Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+![Bash](https://img.shields.io/badge/-Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
+
+**Cloud & IaC:** AWS (ECS Fargate, RDS, ECR, WAF, IAM, KMS, CloudWatch) · Terraform
+
+**CI/CD & supply chain:** GitHub Actions · Docker · Cosign · Syft (SBOM) · Conftest/OPA
+
+**Security testing:** Bandit · Semgrep · pip-audit · gitleaks · Trivy · OWASP ZAP · Nmap · Wireshark · Nessus
+
+**Languages:** Python · Bash · HCL · Rego · YAML · SQL
+
+---
+
+## 🔭 What I'm working on
+
+- Next MediBook milestones: Terraform modules for a second environment, a clinic staff portal, and running migrations from CI
+- Rebuilding earlier Kubernetes and Terraform projects to the same evidence-first standard
 
 ---
 
 ## 🤝 Let's connect
 
-Open to DevSecOps and cloud security roles, collaborations, and freelance infrastructure work. Happy to talk about Kubernetes, Terraform, pipeline security, or homelabs.
+Open to DevSecOps and cloud security roles and internships. Happy to talk about pipeline security, Terraform, or AWS.
 
-[Portfolio](https://abdurahim50.github.io) · [LinkedIn](https://www.linkedin.com/in/abdurahim-yongho/) · [Medium](https://yonghoabdurahim.medium.com/) · [dev.to](https://dev.to/abdurahim50) · [X](https://x.com/AYongho)
+👉 **Start with [MediBook](https://github.com/abdurahim50/medibook), then reach out on LinkedIn.**
+
+[LinkedIn](https://www.linkedin.com/in/abdurahim-yongho/) · [Medium](https://yonghoabdurahim.medium.com/) · [dev.to](https://dev.to/abdurahim50) · [X](https://x.com/AYongho)
 
 He/Him · ⚡ I once ran a half marathon with no training, purely to win a bet.
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
