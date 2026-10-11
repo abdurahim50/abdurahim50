@@ -4,7 +4,7 @@
 
 ![Security+](https://img.shields.io/badge/CompTIA-Security%2B-2ea44f?style=flat-square)
 ![Network+](https://img.shields.io/badge/CompTIA-Network%2B-2ea44f?style=flat-square)
-![AWS Cloud Practitioner](https://img.shields.io/badge/AWS-Cloud%20Practitioner-FF9900?style=flat-square&logo=amazonwebservices&logoColor=white)
+![AWS Cloud Practitioner](https://img.shields.io/badge/AWS-Cloud%20Practitioner-FF9900?style=flat-square)
 ![PSM I](https://img.shields.io/badge/Scrum.org-PSM%20I-0b5d8c?style=flat-square)
 
 I build cloud systems where security is part of the delivery path, not a report filed afterwards. A failing scan stops the merge, an unsigned image never reaches production, and every claim in my READMEs links to the evidence behind it.
@@ -70,12 +70,12 @@ flowchart LR
 
 ## 🛠️ Tech stack
 
-![AWS](https://img.shields.io/badge/-AWS-FF9900?style=flat-square&logo=amazonwebservices&logoColor=white)
+![AWS](https://img.shields.io/badge/-AWS-FF9900?style=flat-square)
 ![Terraform](https://img.shields.io/badge/-Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/-GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Open Policy Agent](https://img.shields.io/badge/-OPA%20%2F%20Conftest-7D9199?style=flat-square&logo=openpolicyagent&logoColor=white)
-![Sigstore](https://img.shields.io/badge/-Cosign-2E2E2E?style=flat-square&logo=sigstore&logoColor=white)
+![Open Policy Agent](https://img.shields.io/badge/-OPA%20%2F%20Conftest-7D9199?style=flat-square)
+![Sigstore](https://img.shields.io/badge/-Cosign-2E2E2E?style=flat-square)
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
