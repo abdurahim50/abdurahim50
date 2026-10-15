@@ -6,7 +6,7 @@
 [![Network+](https://img.shields.io/badge/CompTIA-Network%2B-2ea44f?style=flat-square)](https://www.credly.com/badges/39e56155-56d5-4e24-8f83-4cee81cec34a)
 [![PSM I](https://img.shields.io/badge/Scrum.org-PSM%20I-0b5d8c?style=flat-square)](https://www.credly.com/badges/2d3b50e8-cd51-494c-8ab7-ea4bff0e9457)
 [![AWS Cloud Practitioner](https://img.shields.io/badge/AWS-Cloud%20Practitioner%20%28%29-lightgrey?style=flat-square)](https://www.credly.com/badges/97b749f6-0859-48cc-91e5-f852d68d52c0)
-[![OCI Foundations Associate](https://img.shields.io/badge/Oracle-OCI%20Foundations%20%28%29-lightgrey?style=flat-square)](https://catalog-education.oracle.com/ords/certview/sharebadge?id=6B54E672FE4DDE556CB7F718E52197FC2CBC39CB268E26684EECA734764DE08A)
+[![OCI Foundations Associate](https://img.shields.io/badge/Oracle-OCI%20Foundations%-lightgrey?style=flat-square)](https://catalog-education.oracle.com/ords/certview/sharebadge?id=6B54E672FE4DDE556CB7F718E52197FC2CBC39CB268E26684EECA734764DE08A)
 
 I build cloud applications and delivery pipelines with security checks, least-privilege access, and recovery testing. MediBook brings those pieces together, with links to code, deployment records, and the gaps I still need to address.
 
