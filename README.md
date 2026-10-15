@@ -7,7 +7,7 @@
 ![AWS Cloud Practitioner](https://img.shields.io/badge/AWS-Cloud%20Practitioner-FF9900?style=flat-square)
 ![PSM I](https://img.shields.io/badge/Scrum.org-PSM%20I-0b5d8c?style=flat-square)
 
-I build cloud systems where security is part of the delivery path, not a report filed afterwards. A failing scan stops the merge, an unsigned image never reaches production, and every claim in my READMEs links to the evidence behind it.
+I build cloud applications and delivery pipelines with security checks, least-privilege access, and recovery testing. MediBook brings those pieces together, with links to code, deployment records, and the gaps I still need to address.
 
 Cybersecurity student at Metropolitan State University, with an A.S. in Software Application Development and a background in HIPAA-regulated compliance work.
 
@@ -21,34 +21,46 @@ DevSecOps and cloud security **internships or entry-level roles** where I can he
 
 | Project | What it is | Technologies | Status |
 |---|---|---|---|
-| **[MediBook](https://github.com/abdurahim50/medibook)** | Secure patient appointment-booking API on AWS with a signed, policy-gated delivery pipeline | Python · FastAPI · Terraform · ECS Fargate · RDS · GitHub Actions · Cosign · OPA | [![CI](https://github.com/abdurahim50/medibook/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/abdurahim50/medibook/actions/workflows/ci.yml) |
+| **[MediBook](https://github.com/abdurahim50/medibook)** | Patient booking API on AWS with image signing, Terraform policy checks, and approved database migrations | Python · FastAPI · Terraform · ECS Fargate · RDS · GitHub Actions · Cosign · OPA | [![CI](https://github.com/abdurahim50/medibook/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/abdurahim50/medibook/actions/workflows/ci.yml) |
 
 *More projects are being rebuilt to the same evidence-first standard and will be added as they're ready.*
 
 ### MediBook in detail
 
-A patient appointment-booking API on AWS, built end to end as a secure delivery exercise on synthetic data. Built across 28 merged pull requests.
+A patient appointment-booking API built with synthetic data and verified through automated tests and live AWS drills. The [engineering case study](https://github.com/abdurahim50/medibook/blob/main/docs/case-study.md) explains why I built it, the challenges I solved, and what I learned.
 
-- **Pipeline:** 8 required checks on every pull request: tests, SAST, dependency, secret and image scans, policy tests, authenticated DAST and a Terraform plan
-- **Supply chain:** keyless Cosign signatures and SBOM attestation, pushed to ECR through GitHub OIDC with no stored AWS keys
-- **Deploy gate:** Terraform verifies the image signature during the plan, and Conftest policies block non-compliant infrastructure
-- **Data protection:** private, KMS-encrypted RDS PostgreSQL with verified TLS, IAM database auth and a least-privilege app role
-- **Recovery:** point-in-time restore drilled and measured at an RTO of 23 min 50 s with no data lost
-- **Governance:** controls mapped to NIST SP 800-53 Rev. 5, with a STRIDE threat model and known gaps tracked in the open
+- **Pipeline:** pull requests run tests, SAST, dependency, secret and image scans, policy tests, authenticated DAST, and a Terraform plan. [CI workflow](https://github.com/abdurahim50/medibook/blob/main/.github/workflows/ci.yml).
+- **Supply chain:** keyless Cosign signatures and SBOM attestations, published to ECR through GitHub OIDC without stored AWS access keys.
+- **Deployment:** workstation Terraform plans verify the image signature and SBOM attestation; Conftest checks infrastructure policies before apply. Direct AWS API or console deployments can bypass these checks.
+- **Migrations:** an approval-gated GitHub workflow uses a dedicated AWS role to run the migration task before the API starts. [Implemented delivery flow](https://github.com/abdurahim50/medibook/blob/main/docs/architecture.md#delivery-path).
+- **Data protection:** private, KMS-encrypted RDS PostgreSQL with verified TLS, IAM database authentication, and a least-privilege application role.
+- **Recovery:** drill 5 on October 9, 2026 measured **21 min 26 s** from data loss to verified recovery. [Drill results and limitations](https://github.com/abdurahim50/medibook/blob/main/docs/evidence/deployment/recovery-drills.md#drill-5-drill-4-repeated-after-hardening-2026-10-09).
+- **Governance:** controls mapped to NIST SP 800-53 Rev. 5, with a STRIDE threat model and documented gaps.
+
+The AWS dev environment is created for verification sessions and destroyed afterward. The CI badge reports workflow status on `main`. [Dev environment and production target](https://github.com/abdurahim50/medibook/blob/main/docs/architecture.md#dev-environment-versus-production).
+
+<details>
+<summary>View the delivery flow</summary>
+
+For code or infrastructure releases and fresh dev deployments:
 
 ```mermaid
-flowchart LR
-    PR["Pull request"] --> CI{"8 CI checks<br/>tests · SAST · SCA<br/>secrets · Trivy · DAST<br/>policy · TF plan"}
-    CI -- fail --> X["Merge blocked"]
-    CI -- pass --> M["main"]
-    M --> R["Release<br/>build · Trivy · SBOM<br/>Cosign sign"]
-    R -- "OIDC, no keys" --> ECR[("Amazon ECR")]
-    ECR --> TF{"Terraform plan<br/>verify signature<br/>Conftest policy"}
-    TF -- "unsigned or non-compliant" --> X2["Deploy refused"]
-    TF -- pass --> AWS["WAF · ALB<br/>ECS Fargate<br/>RDS PostgreSQL"]
+flowchart TD
+    PR["Pull request"] --> CI{"Tests and security checks"}
+    CI -- fail --> BLOCK["Merge blocked"]
+    CI -- pass --> REL["Merge: build and release"]
+    REL --> ECR["ECR: signed image and SBOM"]
+    ECR --> TF{"Workstation Terraform: signature and policy checks"}
+    TF -- fail --> STOP["Plan rejected"]
+    TF -- pass --> MIG["Approved GitHub migration workflow"]
+    MIG -- "Migration succeeds" --> APP["Terraform starts API on ECS Fargate"]
 ```
 
-📄 [Architecture](https://github.com/abdurahim50/medibook/blob/main/docs/architecture.md) · [Threat model](https://github.com/abdurahim50/medibook/blob/main/docs/threat-model.md) · [NIST controls](https://github.com/abdurahim50/medibook/blob/main/docs/controls.md) · [Evidence](https://github.com/abdurahim50/medibook/blob/main/docs/evidence.md) · [Runbook](https://github.com/abdurahim50/medibook/blob/main/docs/runbook.md)
+The [architecture walkthrough](https://github.com/abdurahim50/medibook/blob/main/docs/architecture.md) covers the full deployment sequence and remaining access-control limits.
+
+</details>
+
+📄 [Case study](https://github.com/abdurahim50/medibook/blob/main/docs/case-study.md) · [Architecture](https://github.com/abdurahim50/medibook/blob/main/docs/architecture.md) · [Threat model](https://github.com/abdurahim50/medibook/blob/main/docs/threat-model.md) · [NIST controls](https://github.com/abdurahim50/medibook/blob/main/docs/controls.md) · [Evidence](https://github.com/abdurahim50/medibook/blob/main/docs/evidence.md) · [Runbook](https://github.com/abdurahim50/medibook/blob/main/docs/runbook.md)
 
 ---
 
@@ -59,12 +71,12 @@ flowchart LR
 | CI/CD with integrated security testing (SAST, SCA, DAST) | [CI workflow](https://github.com/abdurahim50/medibook/blob/main/.github/workflows/ci.yml): Bandit, Semgrep, pip-audit, gitleaks, Trivy, OWASP ZAP |
 | Infrastructure as Code on AWS | [Terraform stacks](https://github.com/abdurahim50/medibook/tree/main/infra): VPC, ALB, WAF, ECS Fargate, RDS, CloudWatch |
 | Policy as code and compliance | [Conftest policies](https://github.com/abdurahim50/medibook/tree/main/policy) mapped to NIST SP 800-53 |
-| Container security | Multi-stage, non-root, read-only image pinned by digest; Trivy gate |
+| Container security | [Dockerfile](https://github.com/abdurahim50/medibook/blob/main/Dockerfile) and [ECS task configuration](https://github.com/abdurahim50/medibook/blob/main/infra/ecs.tf): non-root user, read-only filesystem, digest pinning, and scanning |
 | Software supply-chain security | [Release workflow](https://github.com/abdurahim50/medibook/blob/main/.github/workflows/release.yml): Syft SBOM, Cosign signing, OIDC to ECR |
-| IAM and least privilege | Read-only CI plan role, RDS IAM auth, row-access-only database role |
+| IAM and least privilege | [Role configuration](https://github.com/abdurahim50/medibook/blob/main/infra/iam.tf) and [database role tests](https://github.com/abdurahim50/medibook/blob/main/tests/test_least_privilege.py): RDS IAM authentication, row-access-only application role, and separate migration permissions |
 | Threat modeling and secure design | [STRIDE threat model](https://github.com/abdurahim50/medibook/blob/main/docs/threat-model.md) |
 | Monitoring, incident response, recovery | [Runbook](https://github.com/abdurahim50/medibook/blob/main/docs/runbook.md) and [recovery drills](https://github.com/abdurahim50/medibook/blob/main/docs/evidence/deployment/recovery-drills.md) |
-| Secure application development | FastAPI with argon2id hashing, session revocation, rate limiting, audit logging, security headers |
+| Secure application development | [Application code](https://github.com/abdurahim50/medibook/tree/main/app) and [tests](https://github.com/abdurahim50/medibook/tree/main/tests): argon2id hashing, session revocation, ownership checks, rate limiting, audit logging, and security headers |
 
 ---
 
@@ -94,7 +106,7 @@ flowchart LR
 
 ## 🔭 What I'm working on
 
-- Next MediBook milestones: Terraform modules for a second environment, a clinic staff portal, and running migrations from CI
+- Next MediBook milestones: Terraform modules for a second environment, a clinic staff portal, and AI-assisted intake
 - Rebuilding earlier Kubernetes and Terraform projects to the same evidence-first standard
 
 ---
@@ -108,3 +120,4 @@ Open to DevSecOps and cloud security roles and internships. Happy to talk about 
 [LinkedIn](https://www.linkedin.com/in/abdurahim-yongho/) · [Medium](https://yonghoabdurahim.medium.com/) · [dev.to](https://dev.to/abdurahim50) · [X](https://x.com/AYongho)
 
 He/Him · ⚡ I once ran a half marathon with no training, purely to win a bet.
+
