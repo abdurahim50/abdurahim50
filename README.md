@@ -6,11 +6,11 @@
 [![Network+](https://img.shields.io/badge/CompTIA-Network%2B-2ea44f?style=flat-square)](https://www.credly.com/badges/39e56155-56d5-4e24-8f83-4cee81cec34a)
 [![PSM I](https://img.shields.io/badge/Scrum.org-PSM%20I-0b5d8c?style=flat-square)](https://www.credly.com/badges/2d3b50e8-cd51-494c-8ab7-ea4bff0e9457)
 [![AWS Cloud Practitioner (expired)](https://img.shields.io/badge/AWS-Cloud%20Practitioner%20%28expired%29-lightgrey?style=flat-square)](https://www.credly.com/badges/97b749f6-0859-48cc-91e5-f852d68d52c0)
-[![OCI Foundations Associate (expired 2024)](https://img.shields.io/badge/Oracle-OCI%20Foundations%20%28expired%202024%29-lightgrey?style=flat-square)](https://catalog-education.oracle.com/ords/certview/sharebadge?id=6B54E672FE4DDE556CB7F718E52197FC2CBC39CB268E26684EECA734764DE08A)
+[![OCI Foundations Associate (expired)](https://img.shields.io/badge/Oracle-OCI%20Foundations%20%28expired%202024%29-lightgrey?style=flat-square)](https://catalog-education.oracle.com/ords/certview/sharebadge?id=6B54E672FE4DDE556CB7F718E52197FC2CBC39CB268E26684EECA734764DE08A)
 
 I build cloud applications and delivery pipelines with security checks, least-privilege access, and recovery testing. MediBook brings those pieces together, with links to code, deployment records, and the gaps I still need to address.
 
-Cybersecurity student at Metropolitan State University, with an A.S. in Software Application Development and a background in HIPAA-regulated compliance work.
+Cybersecurity student at Metropolitan State University with an A.S. in Software Application Development and experience in HIPAA-regulated compliance.
 
 ### 🔎 Currently looking for
 
@@ -30,10 +30,10 @@ DevSecOps and cloud security **internships or entry-level roles** where I can he
 
 A patient appointment-booking API built with synthetic data and verified through automated tests and live AWS drills. The [engineering case study](https://github.com/abdurahim50/medibook/blob/main/docs/case-study.md) explains why I built it, the challenges I solved, and what I learned.
 
-- **Pipeline:** pull requests run tests, SAST, dependency, secret and image scans, policy tests, authenticated DAST, and a Terraform plan. [CI workflow](https://github.com/abdurahim50/medibook/blob/main/.github/workflows/ci.yml).
+- **Pipeline:** pull requests run tests, SAST, dependency, secret, and image scans, policy tests, authenticated DAST, and a Terraform plan. [CI workflow](https://github.com/abdurahim50/medibook/blob/main/.github/workflows/ci.yml).
 - **Supply chain:** keyless Cosign signatures and SBOM attestations, published to ECR through GitHub OIDC without stored AWS access keys.
 - **Deployment:** workstation Terraform plans verify the image signature and SBOM attestation; Conftest checks infrastructure policies before apply. Direct AWS API or console deployments can bypass these checks.
-- **Migrations:** an approval-gated GitHub workflow uses a dedicated AWS role to run the migration task before the API starts. [Implemented delivery flow](https://github.com/abdurahim50/medibook/blob/main/docs/architecture.md#delivery-path).
+- **Migrations:** An approval-gated GitHub workflow uses a dedicated AWS role to run the migration task before the API starts. [Implemented delivery flow](https://github.com/abdurahim50/medibook/blob/main/docs/architecture.md#delivery-path).
 - **Data protection:** private, KMS-encrypted RDS PostgreSQL with verified TLS, IAM database authentication, and a least-privilege application role.
 - **Recovery:** drill 5 on October 9, 2026 measured **21 min 26 s** from data loss to verified recovery. [Drill results and limitations](https://github.com/abdurahim50/medibook/blob/main/docs/evidence/deployment/recovery-drills.md#drill-5-drill-4-repeated-after-hardening-2026-10-09).
 - **Governance:** controls mapped to NIST SP 800-53 Rev. 5, with a STRIDE threat model and documented gaps.
